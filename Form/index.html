@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="#">
+        <div class="container">
+            <h1 style="text-align: center;">Contact Form</h1>
+            <hr>
+        
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name">
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" id="email">
+        
+            <label for="gender"><b>Gender</b></label><br><br>
+            <input type="radio" name="Male" id="gender" value="Male">Male
+            <input type="radio" name="Female" id="gender" value="Female">Female<br><br>
+        
+            <label for="phone"><b>Phone</b></label>
+            <input type="number" placeholder="Phone Number" name="phone" id="phone">
+            
+            <label for="message"><b>Message</b></label><br>
+            <textarea placeholder="Message for us...." id="message" name="message" rows="4" cols="50"></textarea>
+            <hr>
+        
+            <button type="submit" class="submitbtn" onclick="validateForm()">Submit</button>
+          </div>
+    </form>
+</body>
+<script type="text/javascript" src="validation.js"></script>
+</html>
