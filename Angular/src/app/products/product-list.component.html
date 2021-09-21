@@ -1,0 +1,57 @@
+<div class="panel panel-primany">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-2">Filter by:</div>
+            <div class="col-md-4">
+                <!-- Two-Way Binding -->
+                <input type="text" [(ngModel)]='listFilter'/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Filtered by: {{listFilter}}</h3>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf='products && products.length'>
+                <thead>
+                    <tr>
+                        <th>
+
+                            <!-- Sending data from template to component -->
+                            <!-- Event Binding -->
+                            <button class="btn btn-primary" (click) = 'toggleImage()'>
+                                {{showImage ? 'Hide' : 'Show'}} Image
+                            </button>
+                        </th>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th>Price</th>
+                        <th>5 Star Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of filteredProducts'>
+                        <td>
+                            <!-- Sending data from component to template -->
+                            <!-- Property Binding - Bind properties of image element with properties of component class -->
+                            <img *ngIf='showImage' [src]="product.imageUrl" [title]="product.productName" [style.width.px]="imageWidth" [style.margin.px]="imageMargin" alt="">
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <!-- Custom Pipe - convertToSpaces -->
+                        <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <!-- Transforming data with pipes '|' -->
+                        <td>{{product.price | currency:'INR':true:'1.2-2'}}</td>
+                        <td><pm-start [rating] = 'product.starRating' (ratingClicked)='onRatingClicked($event)'></pm-start></td>
+                        <!-- <td>{{product.starRating}}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
