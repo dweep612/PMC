@@ -41,7 +41,7 @@
                             <!-- Property Binding - Bind properties of image element with properties of component class -->
                             <img *ngIf='showImage' [src]="product.imageUrl" [title]="product.productName" [style.width.px]="imageWidth" [style.margin.px]="imageMargin" alt="">
                         </td>
-                        <td>{{product.productName}}</td>
+                        <td><a [routerLink]="['/product', product.productId]">{{product.productName}}</a></td>
                         <!-- Custom Pipe - convertToSpaces -->
                         <td>{{product.productCode | lowercase | convertToSpaces: '-'}}</td>
                         <td>{{product.releaseDate}}</td>
