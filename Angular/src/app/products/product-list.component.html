@@ -47,7 +47,7 @@
                         <td>{{product.releaseDate}}</td>
                         <!-- Transforming data with pipes '|' -->
                         <td>{{product.price | currency:'INR':true:'1.2-2'}}</td>
-                        <td><pm-start [rating] = 'product.starRating' (ratingClicked)='onRatingClicked($event)'></pm-start></td>
+                        <td><pm-star [rating] = 'product.starRating' (ratingClicked)='onRatingClicked($event)'></pm-star></td>
                         <!-- <td>{{product.starRating}}</td> -->
                     </tr>
                 </tbody>
