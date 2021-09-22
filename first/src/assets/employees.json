@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Dweep Panchal",
+      "mobile": 9876543217,
+      "email": "dweep@gmail.com",
+      "department": "Professional Service"
+    },
+    {
+        "name": "Mary Patel",
+        "mobile": 9876512782,
+        "email": "mary@gmail.com",
+        "department": "HR"
+    },
+    {
+        "name": "Ayush Shah",
+        "mobile": 8978526374,
+        "email": "ayush@gmail.com",
+        "department": "Managed Service"
+    },
+    {
+        "name": "Alex Johnson",
+        "mobile": 8745213698,
+        "email": "alex@gmail.com",
+        "department": "Product Service"
+    },
+    {
+        "name": "John Vaynerchuk",
+        "mobile": 7778899551,
+        "email": "john@gmail.com",
+        "department": "Sales & Marketing"
+    }
+]
