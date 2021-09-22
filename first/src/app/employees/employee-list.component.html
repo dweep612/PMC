@@ -1,0 +1,24 @@
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Mobile No.</th>
+          <th>Email</th>
+          <th>Department</th>
+          <!-- <th>Action</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let employee of employees'>
+          <td>{{employee.name}}</td>
+          <td>{{employee.mobile}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.department}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="submit" class="btn btn-dark" (click)='onClick()'>
+      Add Employee
+    </button>
+</div>
