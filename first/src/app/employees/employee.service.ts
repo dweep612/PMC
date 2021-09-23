@@ -7,30 +7,35 @@ import { IEmployee } from './employee';
 export class EmployeeService {
   employees: IEmployee[] = [
     {
+      id: 1,
       name: 'Dweep Panchal',
       mobile: 9876543217,
       email: 'dweep@gmail.com',
       department: 'Professional Service',
     },
     {
+      id: 2,
       name: 'Mary Patel',
       mobile: 9876512782,
       email: 'mary@gmail.com',
       department: 'HR',
     },
     {
+      id: 3,
       name: 'Ayush Shah',
       mobile: 8978526374,
       email: 'ayush@gmail.com',
       department: 'Managed Service',
     },
     {
+      id: 4,
       name: 'Alex Johnson',
       mobile: 8745213698,
       email: 'alex@gmail.com',
       department: 'Product Service',
     },
     {
+      id: 5,
       name: 'John Vaynerchuk',
       mobile: 7778899551,
       email: 'john@gmail.com',
@@ -40,52 +45,41 @@ export class EmployeeService {
 
   create(employee: IEmployee) {
     const itemIndex = this.employees.length;
-    // usercontact.id = this.getnextId();
+    employee.id = this.getnextId();
     console.log(employee);
     this.employees[itemIndex] = employee;
   }
 
-  // delete(usercontact: UserContact) {
-  //   this.usercontacts.splice(this.usercontacts.indexOf(usercontact), 1);
-  // }
-
-  // update(usercontact: UserContact) {
-  //   const itemIndex = this.usercontacts.findIndex(
-  //     (item) => item.id === usercontact.id
-  //   );
-  //   console.log(itemIndex);
-  //   this.usercontacts[itemIndex] = usercontact;
-  // }
+  update(employee: IEmployee) {
+    const itemIndex = this.employees.findIndex(
+      (item) => item.id === employee.id
+    );
+    console.log(itemIndex);
+    this.employees[itemIndex] = employee;
+  }
 
   getall(): IEmployee[] {
     console.log(this.employees);
     return this.employees;
   }
 
-  // reorderUserContacts(usercontact: IEmployee) {
-  //   console.log('Zur Info:', usercontact);
-  //   this.usercontacts = this.usercontacts
-  //     .map((uc) => (uc.id === usercontact.id ? usercontact : uc))
-  //     .sort((a, uc) => uc.id - uc.id);
-  // }
+  getUserById(id: number) {
+    console.log(id);
+    const itemIndex = this.employees.findIndex((item) => item.id === id);
+    console.log(itemIndex);
+    return this.employees[itemIndex];
+  }
 
-  // getUserById(id: number) {
-  //   console.log(id);
-  //   const itemIndex = this.usercontacts.findIndex((item) => item.id === id);
-  //   console.log(itemIndex);
-  //   return this.usercontacts[itemIndex];
-  // }
-
-  // getnextId(): number {
-  //   let highest = 0;
-  //   this.usercontacts.forEach(function (item) {
-  //     if (highest === 0) {
-  //       highest = item.id;
-  //     }
-  //     if (highest < item.id) {
-  //       highest = item.id;
-  //     }
-  //   });
-  //   return highest + 1;
-  // }
+  getnextId(): number {
+    let highest = 0;
+    this.employees.forEach(function (item) {
+      if (highest === 0) {
+        highest = item.id;
+      }
+      if (highest < item.id) {
+        highest = item.id;
+      }
+    });
+    return highest + 1;
+  }
 }

@@ -1,13 +1,10 @@
 <form [formGroup] = "addForm">
     <div class="container">
-        <h1 style="text-align: center;">Add Employee</h1>
+        <h1 style="text-align: center;">Update Employee</h1>
         <hr>
     
         <label for="name"><b>Name</b></label>
         <input type="text" placeholder="Enter Name" name="name" id="name" formControlName="name" required>
-        <!-- <div class="feedback-red" *ngIf="isInvalid('name')">
-            Name is empty.
-        </div> -->
 
         <label for="mobile"><b>Mobile No.</b></label>
         <input type="number" placeholder="Enter Mobile Number" name="mobile" id="mobile" formControlName="mobile">
@@ -26,7 +23,7 @@
             <option value="Sales & Marketing">Sales & Marketing</option>
         </select>
     
-        <button type="submit" class="btn btn-dark" style="margin-right: 15px;" (click)="onSubmit()">Save</button>
+        <button type="submit" class="btn btn-dark" style="margin-right: 15px;" (click)='onSubmit()'>Update</button>
         <button type="reset" class="btn btn-dark">Clear</button>
       </div>
 </form>

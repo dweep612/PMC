@@ -34,6 +34,10 @@ export class EmployeeListComponent implements OnInit {
     console.log(this.employees);
   }
 
+  onEdit(): void {
+    this._router.navigate(['/editemployee']);
+  }
+
   onClick(): void {
     this._router.navigate(['/addemployee']);
   }

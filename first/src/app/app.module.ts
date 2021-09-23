@@ -8,9 +8,15 @@ import { EmployeeService } from './employees/employee.service';
 import { AddEmployeeComponent } from './employees/addemployee/addemployee.component';
 import { EmployeeListComponent } from './employees/listemployee/employee-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditEmployeeComponent } from './employees/editemployee/editemployee.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeeListComponent, AddEmployeeComponent],
+  declarations: [
+    AppComponent,
+    EmployeeListComponent,
+    AddEmployeeComponent,
+    EditEmployeeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

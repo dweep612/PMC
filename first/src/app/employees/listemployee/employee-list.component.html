@@ -6,7 +6,7 @@
           <th>Mobile No.</th>
           <th>Email</th>
           <th>Department</th>
-          <!-- <th>Action</th> -->
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -15,6 +15,9 @@
           <td>{{employee.mobile}}</td>
           <td>{{employee.email}}</td>
           <td>{{employee.department}}</td>
+          <td>
+            <button type="submit" class="btn btn-dark" (click)='onEdit()'><a style="text-decoration: none; color: white;" [routerLink]="['/editemployee', employee.id]">Edit</a></button>
+          </td>
         </tr>
       </tbody>
     </table>
